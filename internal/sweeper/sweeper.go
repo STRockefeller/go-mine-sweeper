@@ -2,6 +2,9 @@ package sweeper
 
 import (
 	"fmt"
+
+	"github.com/fatih/color"
+
 	"math/rand"
 	"time"
 )
@@ -67,11 +70,16 @@ func (b *Board) calculateNeighboringMines() {
 	}
 }
 
-func (b *Board) Display() (gameOver bool) {
+func (b *Board) Display(highlightX, highlightY int) (gameOver bool) {
 	unrevealedGrids := 0
 	endGameMessage := "YOU WON THE GAME!"
+
 	for y := 0; y < b.Height; y++ {
 		for x := 0; x < b.Width; x++ {
+			if x == highlightX && y == highlightY {
+				color.Unset()
+				color.Set(color.FgMagenta)
+			}
 			cell := b.Grid[y][x]
 			if cell.Revealed {
 				if cell.HasMine {
@@ -88,6 +96,7 @@ func (b *Board) Display() (gameOver bool) {
 				fmt.Print(". ")
 				unrevealedGrids++
 			}
+			color.Unset()
 		}
 		fmt.Println()
 	}
@@ -95,7 +104,7 @@ func (b *Board) Display() (gameOver bool) {
 		gameOver = true
 	}
 	if gameOver {
-		fmt.Println(endGameMessage)
+		color.Red(endGameMessage)
 	}
 	return
 }

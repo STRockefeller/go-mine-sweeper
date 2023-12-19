@@ -52,13 +52,15 @@ Coordinates are 0-indexed from the top-left corner of the board.
 ### Example
 
 ```shell
-Enter your move (e.g., 'R 3 4' to reveal or 'F 2 1' to flag) (0-indexed from the top-left corner):
+Enter your move (e.g., 'R 3 4' to reveal or 'F 2 1' to flag) (0-indexed from the top-left corner): R 0 2
 ```
 
 ### Screenshots
 
 ![difficulty selection](https://i.imgur.com/Ievjiex.png)
-![game play](https://i.imgur.com/aAh9qPS.png)
+![game play](https://i.imgur.com/DhKX8VA.png)
+![game play](https://i.imgur.com/rio4Jai.png)
+![game play](https://i.imgur.com/P6nAAxy.png)
 
 ## License
 
