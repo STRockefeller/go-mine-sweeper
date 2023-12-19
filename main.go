@@ -18,7 +18,7 @@ func main() {
 			huh.NewSelect[*sweeper.Board]().Title("Game Difficulty").Options(
 				huh.NewOption("Easy", sweeper.NewBoard(8, 8, 7)),
 				huh.NewOption("Medium", sweeper.NewBoard(10, 10, 15)),
-				huh.NewOption("Easy", sweeper.NewBoard(12, 12, 29)),
+				huh.NewOption("Hard", sweeper.NewBoard(12, 12, 29)),
 			).Value(&board),
 		),
 	)
